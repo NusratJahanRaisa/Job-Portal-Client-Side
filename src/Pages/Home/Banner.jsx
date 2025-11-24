@@ -4,7 +4,7 @@ import t2 from '../../assets/img/team2.jpg'
 
 const Banner = () => {
     return (
-        <div className="hero bg-base-200 min-h-screen">
+        <div className="hero bg-base-200">
 
     <div className="hero-content flex-col lg:flex-row-reverse gap-20 w-10/12 mx-auto">
 

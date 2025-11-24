@@ -1,7 +1,6 @@
 import { use } from "react";
 import { Link,NavLink, useLocation } from "react-router";
 import { AuthContext } from "../../Contexts & Providers/AuthContext";
-import Hooks from "../../Hooks/Hooks";
 
 export default function Navbar() {
   
@@ -12,7 +11,10 @@ const {user,signOutUser} = use(AuthContext)
     { name: "Find a Job", path: "/jobs" },
     { name: "Recruiters", path: "/recruiters" },
     
-    user ? { name: "Applications", path: "/applications" } : {name: "Candidates", path: "/candidates"},
+    user ? { name: "Applications", path: "/applications" } : '',
+
+
+    user ? { name: "Add Jobs", path: "/addjobs" } : '',
     
     { name: "Pages", path: "/pages" },
     { name: "Blog", path: "/blog" },
@@ -30,7 +32,7 @@ const {user,signOutUser} = use(AuthContext)
   }
 
   return (
-    <nav className="w-full bg-white shadow-sm fixed top-0 left-0 z-50 ">
+    <nav className="w-full bg-white shadow-sm sticky top-0 left-0 z-50 ">
       <div className="max-w-7xl mx-auto px-4 md:px-8 flex items-center justify-between h-16">
 
         {/* Logo */}

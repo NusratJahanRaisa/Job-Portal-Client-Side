@@ -18,9 +18,8 @@ const MyApplications = () => {
     )
     },[user])
 
-
     return (
-        <div className='my-30 '>
+        <div className='my-12 '>
            <MyApplicationList applicationData={applicationData}></MyApplicationList> 
         </div>
     );
