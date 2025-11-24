@@ -90,20 +90,20 @@ const AddJobs = () => {
               <input
                 className="btn"
                 type="radio"
-                name="frameworks"
-                aria-label="Svelte"
+                name="jobtype"
+                aria-label="Full-Time"
               />
               <input
                 className="btn"
                 type="radio"
-                name="frameworks"
-                aria-label="Vue"
+                name="jobtype"
+                aria-label="Remote"
               />
               <input
                 className="btn"
                 type="radio"
-                name="frameworks"
-                aria-label="React"
+                name="jobtype"
+                aria-label="Hybrid"
               />
             </form>
           </div>
