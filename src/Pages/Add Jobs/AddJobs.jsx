@@ -9,13 +9,29 @@ const AddJobs = () => {
 
   const handleAddJob = (e) => {
     e.preventDefault();
-    const formData = new FormData(e.target);
-    const initialData = Object.fromEntries(formData.entries());
-    const { min, max, currency, ...newJob } = initialData;
 
+
+    const form = e.target;
+    const formdata = new FormData(form)
+    const initialData = Object.fromEntries(formdata.entries());
+    // console.log(initialData)
+    
+
+    // processed salary
+    const { min, max, currency, ...newJob } = initialData;
     newJob.salaryRange = { min, max, currency };
-    newJob.requirements = newJob.requirements.split("\n");
-    newJob.responsibilities = newJob.responsibilities.split("\n");
+
+    // processed requirements 
+    const splitedRequirements = newJob.requirements.split("\n");
+    const trimedRequirements = splitedRequirements.map(reqData=>reqData.trim());
+    newJob.requirements=trimedRequirements
+    
+
+    // processed responsibilities
+    newJob.responsibilities = newJob.responsibilities.split("\n").map(resdata=>resdata.trim());
+
+
+    console.log(newJob)
 
     fetch("http://localhost:5000/jobs", {
       method: "POST",
@@ -91,18 +107,21 @@ const AddJobs = () => {
                 className="btn"
                 type="radio"
                 name="jobtype"
+                value="Full-Time"
                 aria-label="Full-Time"
               />
               <input
                 className="btn"
                 type="radio"
                 name="jobtype"
+                value="Remote"
                 aria-label="Remote"
               />
               <input
                 className="btn"
                 type="radio"
                 name="jobtype"
+                value="Hybrid"
                 aria-label="Hybrid"
               />
             </form>
