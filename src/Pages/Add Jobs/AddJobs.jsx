@@ -1,7 +1,7 @@
-import React from "react";
 import Swal from "sweetalert2";
 import useAuth from "../../Hooks/Hooks";
 import { useNavigate } from "react-router";
+import axios from "axios";
 
 const AddJobs = () => {
   const { user } = useAuth();
@@ -33,22 +33,17 @@ const AddJobs = () => {
 
     console.log(newJob)
 
-    fetch("http://localhost:5000/jobs", {
-      method: "POST",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify(newJob),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.insertedId) {
+    axios.post('http://localhost:5000/jobs',newJob)
+      .then(res => {
+        if (res.data.insertedId) {
           Swal.fire({
-            position: "top-end",
+            position: "top-center",
             icon: "success",
             title: "Job Has been added.",
             showConfirmButton: false,
             timer: 1500,
           });
-          navigate("/myPostedJobs");
+          // navigate("/myPostedJobs");
         }
       });
   };
