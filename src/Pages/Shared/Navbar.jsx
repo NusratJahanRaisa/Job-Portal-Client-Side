@@ -15,6 +15,9 @@ const {user,signOutUser} = use(AuthContext)
 
 
     user ? { name: "Add Jobs", path: "/addjobs" } : '',
+
+
+    user ? { name: "My Posted Jobs", path: "/mypostedjobs" } : '',
     
     { name: "Pages", path: "/pages" },
     { name: "Blog", path: "/blog" },
