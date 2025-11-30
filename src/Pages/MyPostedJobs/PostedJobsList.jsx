@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router";
 
 const PostedmyJobDataList = ({ myJobData }) => {
     return (
@@ -11,6 +12,7 @@ const PostedmyJobDataList = ({ myJobData }) => {
                         <th className="border px-4 py-2">Location</th>
                         <th className="border px-4 py-2">Deadline</th>
                         <th className="border px-4 py-2">Salary</th>
+                        <th></th>
                     </tr>
                 </thead>
 
@@ -23,6 +25,11 @@ const PostedmyJobDataList = ({ myJobData }) => {
                             <td className="border px-4 py-2">{job.applicationDeadline}</td>
                             <td className="border px-4 py-2">
                                 {job.salaryRange?.min} - {job.salaryRange?.max} {job.salaryRange?.currency}
+                            </td>
+                            <td className="border px-4 py-2 text-center">
+                                <Link to={`/mypostedjobs/${job._id}`}>
+                                <button className="btn">View Applications</button>
+                                </Link>
                             </td>
                         </tr>
                     ))}

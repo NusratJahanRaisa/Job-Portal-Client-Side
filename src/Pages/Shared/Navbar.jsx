@@ -8,8 +8,8 @@ const {user,signOutUser} = use(AuthContext)
 
   const navLinks = [
     { name: "Home", path: "/" },
-    { name: "Find a Job", path: "/jobs" },
-    { name: "Recruiters", path: "/recruiters" },
+    // { name: "Find a Job", path: "/jobs" },
+    // { name: "Recruiters", path: "/recruiters" },
     
     user ? { name: "Applications", path: "/applications" } : '',
 
@@ -19,9 +19,9 @@ const {user,signOutUser} = use(AuthContext)
 
     user ? { name: "My Posted Jobs", path: "/mypostedjobs" } : '',
     
-    { name: "Pages", path: "/pages" },
-    { name: "Blog", path: "/blog" },
-    { name: "Contact", path: "/contact" },
+    // { name: "Pages", path: "/pages" },
+    // { name: "Blog", path: "/blog" },
+    // { name: "Contact", path: "/contact" },
   ];
   const location = useLocation(); 
 
