@@ -15,7 +15,7 @@ const ViewApplications = () => {
 
       <div className="space-y-4">
         {data.map(singleData => 
-        <ViewApplication singleData={singleData} key={data._id}>
+        <ViewApplication singleData={singleData} job_id={job_id} key={data._id}>
         </ViewApplication>
         )}
       </div>

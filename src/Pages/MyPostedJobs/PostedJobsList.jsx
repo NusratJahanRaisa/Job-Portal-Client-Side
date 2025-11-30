@@ -27,7 +27,7 @@ const PostedmyJobDataList = ({ myJobData }) => {
                                 {job.salaryRange?.min} - {job.salaryRange?.max} {job.salaryRange?.currency}
                             </td>
                             <td className="border px-4 py-2 text-center">
-                                <Link to={`/mypostedjobs/${job._id}`}>
+                                <Link to={`/applications/${job._id}`}>
                                 <button className="btn">View Applications</button>
                                 </Link>
                             </td>

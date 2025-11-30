@@ -11,13 +11,13 @@ const {user,signOutUser} = use(AuthContext)
     // { name: "Find a Job", path: "/jobs" },
     // { name: "Recruiters", path: "/recruiters" },
     
-    user ? { name: "Applications", path: "/applications" } : '',
+    user ? { name: "Applications", path: "/myapplications" } : '',
 
 
     user ? { name: "Add Jobs", path: "/addjobs" } : '',
 
 
-    user ? { name: "My Posted Jobs", path: "/mypostedjobs" } : '',
+    user ? { name: "My Posted Jobs", path: "/applications" } : '',
     
     // { name: "Pages", path: "/pages" },
     // { name: "Blog", path: "/blog" },
